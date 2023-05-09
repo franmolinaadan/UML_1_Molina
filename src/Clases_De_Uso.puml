@@ -1,23 +1,23 @@
 @startuml
 left to right direction
+actor "Usuario" as us
+actor "Administrador" as admin
 
-actor "new actor" as cl
+usecase "Iniciar sesion" as (login)
+usecase "Recuperar contraseña" as (recover)
+usecase "Modificar contraseña" as (modify)
+usecase "Cerrar sesion" as (logout)
 
-usecase "Identificarse" as (id)
-usecase "Pagar" as (Pagar)
-usecase "Elegir Mensajero" as (Elegir)
-usecase "Confirmar" as (Confirmar)
+usecase "Registrar usuario" as (Registrar)
+usecase "Instalar programa" as (install)
 
-usecase "Registrarse" as (Registrar)
-usecase "Pagar con tarjeta" as (PagarT)
-usecase "Pagar con transferencia" as (Transferencia)
+us -- login
+us -- recover
+us -- modify
+us -- logout
 
-cl -- id
-cl -- Pagar
-cl -- Elegir
-cl -- Confirmar
+admin -- Registrar
+admin -- install
+admin --> us
 
-Registrar ..> id
-PagarT --> Pagar
-Transferencia --> Pagar
 @enduml
