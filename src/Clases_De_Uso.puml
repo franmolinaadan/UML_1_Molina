@@ -1,10 +1,14 @@
 @startuml
 
 
-"Pagar" as (P)
-"Pagar con tarjeta" as (PT)
-"Pagar en efectivo" as (PE)
+actor "Cliente" as cl
+actor "Cliente vip" as vip
 
-PT --> P
-PE --> P
+usecase "Reservar vuelo" as (Reservar)
+usecase "Elegir asientos" as (Asientos)
+
+cl -- Reservar
+vip -- Asientos
+
+vip --> cl
 @enduml
