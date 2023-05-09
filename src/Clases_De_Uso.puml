@@ -1,8 +1,10 @@
 @startuml
 
 
-"Acceder" as (Ac)
-"Registrarse" as (Rg)
+"Pagar" as (P)
+"Pagar con tarjeta" as (PT)
+"Pagar en efectivo" as (PE)
 
-Rg ..> Ac:<<extend>>
+PT --> P
+PE --> P
 @enduml
