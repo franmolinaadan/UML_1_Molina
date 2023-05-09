@@ -2,13 +2,19 @@
 
 
 actor "Cliente" as cl
-actor "Cliente vip" as vip
 
-usecase "Reservar vuelo" as (Reservar)
-usecase "Elegir asientos" as (Asientos)
+usecase "Meter Dinero" as (Meter)
+usecase "Pedir Azucar" as (PedirA)
+usecase "Pedir Producto" as (PedirP)
+usecase "Cancelar" as (Cancelar)
 
-cl -- Reservar
-vip -- Asientos
+usecase "Devolver Dinero" as (Devolver)
 
-vip --> cl
+cl -- Meter
+cl -- PedirA
+cl -- PedirP
+cl -- Cancelar
+
+PedirP ..> Devolver
+Cancelar ..> Devolver
 @enduml
