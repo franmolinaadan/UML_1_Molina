@@ -1,23 +1,13 @@
 @startuml
 left to right direction
-actor "Usuario" as us
-actor "Administrador" as admin
+actor "Ciudadano" as ciu
+actor "Ciudadano extranjero" as ciuE
 
-usecase "Iniciar sesion" as (login)
-usecase "Recuperar contraseña" as (recover)
-usecase "Modificar contraseña" as (modify)
-usecase "Cerrar sesion" as (logout)
+usecase "Registrar entrada" as (regis)
+usecase "Tomar huellas" as (huellas)
 
-usecase "Registrar usuario" as (Registrar)
-usecase "Instalar programa" as (install)
-
-us -- login
-us -- recover
-us -- modify
-us -- logout
-
-admin -- Registrar
-admin -- install
-admin --> us
-
+ciu -- regis
+ciuE -- huellas
+ciuE --> ciu
+huellas ..> regis :<<extend>>
 @enduml
