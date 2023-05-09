@@ -1,20 +1,23 @@
 @startuml
+left to right direction
 
+actor "new actor" as cl
 
-actor "Cliente" as cl
+usecase "Identificarse" as (id)
+usecase "Pagar" as (Pagar)
+usecase "Elegir Mensajero" as (Elegir)
+usecase "Confirmar" as (Confirmar)
 
-usecase "Meter Dinero" as (Meter)
-usecase "Pedir Azucar" as (PedirA)
-usecase "Pedir Producto" as (PedirP)
-usecase "Cancelar" as (Cancelar)
+usecase "Registrarse" as (Registrar)
+usecase "Pagar con tarjeta" as (PagarT)
+usecase "Pagar con transferencia" as (Transferencia)
 
-usecase "Devolver Dinero" as (Devolver)
+cl -- id
+cl -- Pagar
+cl -- Elegir
+cl -- Confirmar
 
-cl -- Meter
-cl -- PedirA
-cl -- PedirP
-cl -- Cancelar
-
-PedirP ..> Devolver
-Cancelar ..> Devolver
+Registrar ..> id
+PagarT --> Pagar
+Transferencia --> Pagar
 @enduml
