@@ -1,0 +1,15 @@
+@startuml
+
+actor "Cliente" as cl
+actor "Restaurante" as rs
+
+rectangle {
+usecase "Mostrar Menu" as (Menu)
+usecase "Pedir Comida" as (Pedir)
+}
+"Entregar Comida" as (Entregar)
+cl -- Menu
+rs -- Menu
+cl -- Pedir
+rs -- Entregar
+@enduml
