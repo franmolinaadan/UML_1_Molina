@@ -1,13 +1,8 @@
 @startuml
 
-actor "Cliente" as cl
 
-"Confirmar Pedido" as (Confirmar)
-"Cancelar Pedido" as (Cancelar)
-"Devolver Cambio" as (Devolver)
+"Acceder" as (Ac)
+"Registrarse" as (Rg)
 
-cl -- Confirmar
-cl -- Cancelar
-Confirmar ..> Devolver:<<include>>
-Cancelar ..> Devolver:<<include>>
+Rg ..> Ac:<<extend>>
 @enduml
